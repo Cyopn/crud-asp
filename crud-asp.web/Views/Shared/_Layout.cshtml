@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - crud_asp.web</title>
+	<link rel="stylesheet" href="~/css/style.css">
+	<script src="~/js/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="~/css/nav.css">
+</head>
+<body>
+	<main role="main" class="pb-3">
+		@RenderBody()
+	</main>
+	<script src="~/js/script.js"></script>
+	<script src='~/js/feather.min.js'></script>
+	<script>feather.replace()</script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
