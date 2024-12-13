@@ -17,10 +17,10 @@
 					<a href="#" class="navbar__link"><i data-feather="trash-2"></i><span>Eliminar</span></a>
 				</li>
 				<li class="navbar__item" data-target="show" id="nose">
-					<a href="#" class="navbar__link"><i data-feather="search"></i><span>Eliminar</span></a>
+					<a href="#" class="navbar__link"><i data-feather="search"></i><span>Mostrar</span></a>
 				</li>
 				<li class="navbar__item" onclick="logout()">
-					<a href="#" class="navbar__link"><i data-feather="log-out"></i><span>Eliminar</span></a>
+					<a href="#" class="navbar__link"><i data-feather="log-out"></i><span>Cerrar sesion</span></a>
 				</li>
 			</ul>
 		</nav>
@@ -29,13 +29,12 @@
 		<div class="section create active">
 			<div class="content">
 				<h2>Agregar registro</h2>
-				<form id="formulario" action="./php/functions.php" method="POST">
-					<input type="hidden" name="form_id" value="save">
+				<form id="formulario" action="/api/save" method="POST">
 					<label for="clave">Clave:</label>
 					<input type="text" id="clave" name="clave" required>
 					<label for="nombre">Nombre:</label>
 					<input type="text" id="nombre" name="nombre" required>
-					<label for="Contraseña">Contraseña:</label>
+					<label for="contraseña">Contraseña:</label>
 					<input type="password" id="contraseña" name="contraseña" required>
 					<label for="sexo">Sexo:</label>
 					<select id="sexo" name="sexo" required>
@@ -44,7 +43,7 @@
 						<option value="femenino">Femenino</option>
 						<option value="otro">Otro</option>
 					</select>
-					<button type="submit" id="btnRegistrar">Registrar</button>
+					<button type="submit">Registrar</button>
 				</form>
 			</div>
 		</div>
@@ -83,29 +82,34 @@
 <div id="modal-login" class="modal">
 	<div class="modal-content">
 		<h2>Iniciar sesion</h2>
-		<form id="form-login" action="./php/functions.php" method="POST">
-			<input type="hidden" name="form_id" value="login">
-			<label for="clave">Clave:</label>
-			<input type="text" id="clave" name="clave" required>
-			<label for="Contraseña">Contraseña:</label>
-			<input type="password" id="contraseña" name="contraseña" required>
-			<button type="submit" id="btnRegistrar">Ingresar</button>
+		<form id="form-login" action="/api/login" method="POST">
+			<label for="clavel">Clave:</label>
+			<input type="text" id="clavel" name="clavel" required>
+			<label for="contraseñal">Contraseña:</label>
+			<input type="password" id="contraseñal" name="contraseñal" required>
+			<button type="submit">Ingresar</button>
 		</form>
+	</div>
+</div>
+<div id="modal-log" class="modal">
+	<div class="modal-content">
+		<p id="modal-log-message"></p>
 	</div>
 </div>
 <div class="modal" id="modal-update">
 	<div class="modal-content">
 		<span class="close" id="close-update">&times;</span>
 		<h2>Actualizar registro</h2>
-		<form class="form-modal" id="form-update" action="./php/functions.php" method="POST">
-			<input type="hidden" name="form_id" value="update">
-			<input type="hidden" name="id" id="id">
+		<form class="form-modal" id="form-update" action="/api/update" method="POST">
+			<input type="hidden" name="idu" id="idu">
 			<label for="clave">Clave:</label>
-			<input type="text" id="clave" name="claveu" required>
+			<input type="text" id="claveu" name="claveu" required>
 			<label for="nombre">Nombre:</label>
-			<input type="text" id="nombre" name="nombreu" required>
-			<label for="sexo">Sexo:</label>
-			<select id="sexo" name="sexou" required>
+			<input type="text" id="nombreu" name="nombreu" required>
+			<label for="contraseñau">Contraseña:</label>
+			<input type="password" id="contraseñau" name="contraseñau" required>
+			<label for="sexou">Sexo:</label>
+			<select id="sexou" name="sexou" required>
 				<option value="">Seleccione...</option>
 				<option value="masculino">Masculino</option>
 				<option value="femenino">Femenino</option>
@@ -119,15 +123,16 @@
 	<div class="modal-content">
 		<span class="close" id="close-delete">&times;</span>
 		<h2>Eliminar registro</h2>
-		<form class="form-modal" id="form-delete" action="./php/functions.php" method="POST">
-			<input type="hidden" name="form_id" value="delete">
-			<input type="hidden" name="idd" id="id">
+		<form class="form-modal" id="form-delete" action="/api/delete" method="POST">
+			<input type="hidden" name="idd" id="idd">
 			<label for="clave">Clave:</label>
-			<input type="text" id="clave" name="clave" readonly>
+			<input type="text" id="claved" name="clave" readonly>
 			<label for="nombre">Nombre:</label>
-			<input type="text" id="nombre" name="nombre" readonly>
-			<label for="sexo">Sexo:</label>
-			<select id="sexo" name="sexo" disabled>
+			<input type="text" id="nombred" name="nombre" readonly>
+			<label for="contraseñad">Contraseña:</label>
+			<input type="password" id="contraseñad" name="contraseñad" readonly>
+			<label for="sexod">Sexo:</label>
+			<select id="sexod" name="sexo" disabled>
 				<option value="">Seleccione...</option>
 				<option value="masculino">Masculino</option>
 				<option value="femenino">Femenino</option>

@@ -43,16 +43,16 @@ main {
     transition: all 0.5s ease;
 }
 
-.section.active {
-    left: 0;
-    opacity: 1;
-}
+    .section.active {
+        left: 0;
+        opacity: 1;
+    }
 
-.section.exit {
-    left: -100%;
-    opacity: 0;
-    transition: all 0.5s ease;
-}
+    .section.exit {
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
 
 .content {
     margin: auto;
@@ -102,10 +102,10 @@ button {
     font-size: 16px;
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
 
 .modal {
     display: none;
@@ -141,9 +141,9 @@ button:disabled {
     transition: color 0.3s ease;
 }
 
-.close:hover {
-    color: #000;
-}
+    .close:hover {
+        color: #000;
+    }
 
 table {
     margin: auto;
